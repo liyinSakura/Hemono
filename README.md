@@ -61,14 +61,13 @@ This project includes a Kilo skill that enables AI agents to interact with the H
 
 ### What's Included
 
-The `hemono-api-skill/` directory contains complete API documentation:
-
-| File | Content |
-|------|---------|
-| `SKILL.md` | Main skill entry — overview, auth, quick reference, common workflows |
-| `api-endpoints.md` | Full request/response specs for every endpoint |
-| `data-models.md` | PocketBase collection schemas and field definitions |
-| `examples.md` | Complete `curl`, Python, and JavaScript examples |
+| Location | Content |
+|----------|---------|
+| `.kilo/skills/hemono-api/SKILL.md` | Auto-discovered skill entry — overview, auth, quick reference, common workflows |
+| `hemono-api-skill/SKILL.md` | Standalone copy of the skill (for external projects) |
+| `hemono-api-skill/api-endpoints.md` | Full request/response specs for every endpoint |
+| `hemono-api-skill/data-models.md` | PocketBase collection schemas and field definitions |
+| `hemono-api-skill/examples.md` | Complete `curl`, Python, and JavaScript examples |
 
 ### How It Works
 
@@ -80,8 +79,6 @@ The skill is auto-discovered by Kilo via `.kilo/skills/hemono-api/SKILL.md`. Whe
 2. **Running Server**: The Hemono backend must be running and accessible.
 
 ### Using the Skill Manually
-
-You can also reference the API docs directly:
 
 ```bash
 # List your ledgers
@@ -96,7 +93,7 @@ curl -X POST http://localhost:8090/api/v1/ledgers/{id}/transactions \
 
 ### Configuration for Other Projects
 
-To use this skill in another Kilo project, add the skill path to your `kilo.json`:
+To use this skill in another Kilo project, copy the `hemono-api-skill/` directory and add the path to your `kilo.json`:
 
 ```jsonc
 {
@@ -105,5 +102,3 @@ To use this skill in another Kilo project, add the skill path to your `kilo.json
   }
 }
 ```
-
-Or copy the `hemono-api-skill/` directory to your project and configure accordingly.
